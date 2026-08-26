@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Finance Automation</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Automacao financeira pessoal</p>
+          <h1>Seu painel deixa de ser preenchido na mao.</h1>
+          <p class="subtitle">
+            Conecte bancos pela Pluggy, salve os itemIds com seguranca e sincronize saldos,
+            faturas e investimentos para sua planilha.
+          </p>
+        </div>
+        <div class="actions">
+          <button id="connectButton">Conectar banco</button>
+          <button id="syncButton" class="secondary">Sincronizar agora</button>
+        </div>
+      </section>
+
+      <section class="status-grid">
+        <article>
+          <span>Pluggy</span>
+          <strong id="pluggyStatus">verificando...</strong>
+        </article>
+        <article>
+          <span>Google Sheets</span>
+          <strong id="sheetsStatus">verificando...</strong>
+        </article>
+        <article>
+          <span>Conexoes</span>
+          <strong id="itemCount">0</strong>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Resumo</h2>
+          <span id="snapshotDate"></span>
+        </div>
+        <div class="money-grid">
+          <div>
+            <span>Dinheiro disponivel</span>
+            <strong id="availableBalance">R$ 0,00</strong>
+          </div>
+          <div>
+            <span>Investimentos</span>
+            <strong id="investments">R$ 0,00</strong>
+          </div>
+          <div>
+            <span>Faturas</span>
+            <strong id="bills">R$ 0,00</strong>
+          </div>
+          <div>
+            <span>Patrimonio estimado</span>
+            <strong id="patrimonio">R$ 0,00</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Bancos conectados</h2>
+        </div>
+        <div id="items" class="items"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Log</h2>
+        </div>
+        <pre id="log"></pre>
+      </section>
+    </main>
+
+    <script src="https://cdn.pluggy.ai/pluggy-connect/v2.8.2/pluggy-connect.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
